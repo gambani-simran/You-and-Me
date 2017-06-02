@@ -47,13 +47,13 @@ app.get('/data', function(req, res) {
 });
 //vendor sign-up
 app.get('/insert', function(req, res) {
-    res.sendFile(path.join(__dirname, 'venreg.html'));
+    res.sendFile(path.join(__dirname, 'views/venreg.html'));
 });
 app.get('/userlogin', function(req, res) {
     res.sendFile(path.join(__dirname, 'userlogin.html'));
 });
 app.get('/useraddl', function(req, res) {
-    res.sendFile(path.join(__dirname, 'addluserinfo.html'));
+    res.sendFile(path.join(__dirname, 'views/venreg.html'));
 });
 /*app.get('/vendor_insert', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/addlvendor.ejs'));
@@ -80,7 +80,7 @@ app.post('/data', function(req, res) {
        }); 
 });
 app.post('/addldata', function(req, res) {
-  res.sendFile(path.join(__dirname, 'addluserinfo.html'));
+  res.sendFile(path.join(__dirname, 'views/addluserinfo.html'));
     console.log(req.body.Name);
     
     // Add these values to your MySQL database here
@@ -106,7 +106,7 @@ app.post('/addldata', function(req, res) {
 
 //vendor sign-up and data insert
 app.post('/insert', function(req, res) {
-  res.sendFile(path.join(__dirname, 'venreg.html'));
+  res.sendFile(path.join(__dirname, 'views/venreg.html'));
     console.log(req.body.Vendor_name);
     
     // Add these values to your MySQL database here
