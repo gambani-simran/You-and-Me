@@ -1,0 +1,257 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+	<% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>                 
+                <tr>
+                    <td><%=(i+1)%></td>
+                    <td><%=data[i].ven_id%></td>
+                    <td><%=data[i].ven_type%></td>
+                    <td><%=data[i].ven_name%></td>
+                    <td><%=data[i].ven_img%></td>
+                    <td>
+                        <a>Edit</a>                       
+                        <a>Delete</a>                       
+                    </td>
+                </tr>
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+            <% } %>
+</table>
+</body>
+</html>-->
+<style type="text/css"> 
+#top_outer{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  background-color: #EF5350;
+}
+#top-left{
+  float: left;
+  width: 40%;
+  height: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+#top-right{
+  float: right;
+  width: 57%;
+  height: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+    #container{
+    float: right;
+  width: 57%;
+  height: 450px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+#one{
+  float: left;
+  width: 40%;
+  height: 450px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+#bottom-left{
+  float: left;
+  width: 40%;
+  height: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+#bottom-right{
+  float: right;
+  width: 57%;
+  height: 150px;
+  border: 0px solid black;
+  margin: 0 auto;
+  position: relative;
+}
+#container>img{
+  width:100%;
+  height:100%;
+  position:absolute;
+}
+#container>.btn{
+  position:absolute;
+  width:5%;
+  height:50px;
+  border: none;
+  border-radius:25px;
+  top:200px;
+  background:black;
+  color:white;
+  font-size:20px;
+}
+#container>#btn2{
+  position:relative;
+  float:right;
+}
+#slides{
+  position:relative;
+  height:450px;
+  width:80%;
+}
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:200%;    
+    height: 20%;
+    margin-left: 60%;
+}
+.btn-top {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:200%;    
+    height: 20%;
+    margin-left: 60%;
+    margin-top: 20%;
+}
+
+</style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Asap|Yanone+Kaffeesatz" rel="stylesheet">
+  </head>
+  <body>
+  <% if(data.length){ 
+                
+  for(var i = 0;i < data.length;i++) { %>                 
+  <div id="top_outer">
+  <div id="top-left" style="border:0px solid black;">
+     <h1 style="margin-left: 10%; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 70px;"><%=data[i].VName%></h1>
+     
+     
+   </div> 
+   <div id="top-right" style="border:0px solid black; line-height: 5px;">
+     
+      <div class="form-group">
+      
+      <h3>Address:</h3>
+      <p style="margin-left: ; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 20px;"><%=data[i].VAddress%></p>
+      <h3>Starting Price:</h3>
+      <p style="margin-left: ; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 20px;"><%=data[i].VPricing%></p>
+      
+      </div>
+     
+   </div>
+   </div>
+  <div id="one" style="border:0px solid black;">
+    <br>
+    <p style="margin-left: 5%; font-family: 'Asap', sans-serif; font-size: 25px;"><%=data[i].VDescription%></p>
+    <p style="margin-left: 5%;"><u>Details</u>: <br><ul><li>Payment Terms: <%=data[i].VPaymentTerms%></li><li>Travel costing: <%=data[i].VTravelCost%></li></ul></p>
+    </div>
+    <div id="container">
+    
+                                
+                                 
+                <img class="slides" src="<%=data[i].VPic_a%>">
+                <img class="slides" src="<%=data[i].VPic_b%>">
+                <img class="slides" src="<%=data[i].VPic_c%>">
+        
+         
+      
+            
+        <button class="btn" onclick="plusIndex(-1)" id="btn1" >&#10094;</button>
+      <button class="btn" onclick="plusIndex(1)" id="btn2" >&#10095;</button>
+     
+    </div>
+  <div id="bottom-left" style="border:0px solid black;">
+     <p style="margin-left: 5%; margin: 2%;">Follow us on....<br>
+     <a href="<%=data[i].VLink_a%>"><i class="fa fa-facebook-official fa-3x"></i></a><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span><i class="fa fa-instagram fa-3x"></i><span>&nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="<%=data[i].VLink_a%>"><i class="fa fa-internet-explorer fa-3x"></i></a><span><form method="post">
+     <input type="hidden" name="ven_liked" value="<%=data[i].VName%>">
+     <span>&nbsp&nbsp&nbsp&nbsp&nbsp</span>Like us!<i class="fa fa-heart fa-3x" id="like"></i>
+     </form></span>
+     
+     </p>
+   </div> 
+   <div id="bottom-right" style="border:0px solid black;">
+   <br>
+   <p style="margin-left: 10%; font-size: 20px;"><u>Contact:</u></p>
+     <!--<p><div class="form-group"><div class="row">
+      <div class="col-md-4">
+      <button id="" name="" class="btn btn-info btn-xl" value="Contact number 1234567890"></button>
+      </div></div>
+      </div></p>
+    <p><div class="form-group"><div class="row">
+      <div class="col-md-4">
+      <button id="" name="" class="btn btn-info btn-xl" value="E-mail Id xyz"></button>
+      </div>
+      </div></div></p>-->
+      <p style="margin-left: 10%; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 20px;">E-mail Id: <%=data[i].VEmail%></p>
+      <p style="margin-left: 10%; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 20px;">Contact number: <%=data[i].VContact%></p>
+   </div> 
+
+
+  <% }
+
+  } %>
+   
+  </body>
+  <script>
+   var index=1;
+   function plusIndex(n){
+    index=index+n;
+    showImage(index);
+   }
+   showImage(1);
+   function showImage(n){
+    var i;
+    var x=document.getElementsByClassName("slides");
+    if(n>x.length){index=1};
+     if(n<1){index=x.length};
+    for(i=0;i<x.length;i++)
+    {
+      x[i].style.display="none";
+    }
+    x[index-1].style.display="block";
+   }
+   $('#like').click(function( event ) {
+    event.preventDefault();
+    $.ajax({
+        url: '/likes',
+        type: 'post',
+        data: $('form').serialize(), // Remember that you need to have your csrf token included
+        dataType: 'json',
+        success: function( _response ){
+            alert("success");
+            //alert(_response.title);
+
+
+        },
+        error: function( _response ){
+            // Handle error
+        }
+    });
+});
+   </script>
+</html>

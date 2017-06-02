@@ -1,0 +1,614 @@
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300|Roboto|Raleway');
+body {
+	margin: 0;
+	background: #222;
+	
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+
+  background: #F44336;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+	height: 80px;
+	width: 100px;
+  float: left;
+  
+}
+
+nav {
+	
+  float: right;
+
+}
+
+nav ul {
+	color: white;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 280ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.mySlides {
+	display:none;
+}
+
+img{
+width:100%;
+height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+.userprofile{
+	width: 100%;
+	height: 150px;
+	border: 0px solid black;
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.7s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.7s;
+  animation-name: fade;
+  animation-duration: 1.7s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.modal-dialog {
+    width: 300px;
+}
+.modal-footer {
+    height: 70px;
+    margin: 0;
+}
+.modal-footer .btn {
+    font-weight: bold;
+}
+.modal-footer .progress {
+    display: none;
+    height: 32px;
+    margin: 0;
+}
+.input-group-addon {
+    color: #fff;
+    background: #3276B1;
+}
+.vcontainer{
+	
+	justify-content: center;
+	width: 100%;
+	padding: 5px;
+	height: auto;
+	display: flex;
+	margin-left: .5%;
+	flex-wrap: wrap;
+	align-content: center;
+}
+.box,.front,.back{
+	height: 285px;
+	width: 305px;
+
+}
+.box{
+
+	perspective: 1000;	
+	border:0px solid #fff;
+	
+}
+.box:hover .flipper,.box.hover .flipper{
+	-webkit-transform:rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.flipper{
+
+	-webkit-transition:1s;
+	-webkit-transform-style:preserve-3d;
+	transition: 0.8s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front{
+	background-size:305px 285px;
+	background-repeat:no-repeat;
+
+	z-index: 2;
+	
+}
+.back{
+	text-align: center;
+	-webkit-transform:rotateY(180deg);
+	transform: rotateY(180deg);
+	
+}
+.front,.back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility:hidden;
+	backface-visibility: hidden;
+}
+.back p{
+	margin: auto;
+	margin-top: 40%;
+	width: 100%;
+	line-height: 30px;
+	font-family: raleway;
+	font-weight: bold;
+	font-size: 30px;
+	
+	position: absolute;
+	color: white;
+}
+
+.fphoto{
+	background-image: url("https://static1.squarespace.com/static/5514c044e4b088ff856d267d/5524835de4b05a24ace5e564/5525d286e4b0d7e24ac375bd/1430877170254/Hawaii-Wedding-Photographer-3736.jpg?format=1500w");
+		}
+.fdecorators{
+	background-image: url("http://weddingseve.com/wp-content/uploads/2014/03/2-beautiful-Wedding-Reception-Decor-ideas.jpg");
+		}
+.fvenue{
+	background-image:url("http://darot.net/wp-content/uploads/2016/10/beautiful-beach-wedding-venues-2.jpg");
+		}
+.foutfit{
+	background-image:url("https://s-media-cache-ak0.pinimg.com/236x/56/ab/1c/56ab1c42d4ff3e569986c18aa7d2f3f4.jpg");
+		}
+.fmakeover{
+	background-image:url("http://timeout-test.candrholdings.com/media/content/normal/27721_ShoppingFeatlight.jpg");
+		}
+.fcards{
+	background-image:url("https://s-media-cache-ak0.pinimg.com/originals/68/ad/b2/68adb2a0984a2cd12d02d987b06030ba.jpg");
+		}
+.fjewellery{
+	background-image:url("http://www.tbztheoriginal.com/images/wedding-collection/9.jpg");
+		}
+.fsangeet{
+		background-image:url("http://www.hamaraevent.com/lib/js/kcfinder/upload/images/image7(20).jpeg");
+			}
+.bphoto{
+	background-color: #F48FB1;
+}
+.bdecorators{
+	background-color: #AB47BC;
+}
+.bvenue{
+	background-color: #F48FB1;
+}
+.boutfit{
+	background-color: #AB47BC;
+}
+.bmakeover{
+	background-color: #AB47BC;
+}
+.bcards{
+	background-color: #F48FB1;
+}
+.bjewellery{
+	background-color: #AB47BC;
+}
+.bsangeet{
+	background-color: #F48FB1;
+}
+.demo {
+  margin: 0 auto;
+  position: realtive ;
+  padding-top: 20px;
+  padding-left: 10px;
+  max-width: 1000px;
+  width: 1000%;
+  text-align: left;
+}
+
+.demo h1 {
+  margin-top: 0;
+  text-align: left;
+}
+
+/**
+ * Footer Styles
+ */
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #D50000;
+  text-align: center;
+  color: white;
+}
+#pro{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 25px;
+	width:100%; 
+	margin-top: 20px; 
+	text-align: center;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>You&Me</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+	$(document).ready(function(){
+    $('.modal-footer input').click(function(){
+		var button = $(this);
+
+		if ( button.attr("data-dismiss") != "modal" ){
+			var inputs = $('form input');
+			var title = $('.modal-title');
+			var progress = $('.progress');
+			var progressBar = $('.progress-bar');
+
+			inputs.attr("disabled", "disabled");
+
+			button.hide();
+
+			progress.show();
+
+			progressBar.animate({width : "100%"}, 100);
+
+			progress.delay(1000)
+					.fadeOut(600);
+
+			button.text("Close")
+					.removeClass("btn-primary")
+					.addClass("btn-success")
+    				.blur()
+					.delay(1600)
+					.fadeIn(function(){
+						title.text("Log in is successful");
+						button.attr("data-dismiss", "modal");
+					});
+		}
+	});
+
+	$('#myModal').on('hidden.bs.modal', function (e) {
+		var inputs = $('form input');
+		var title = $('.modal-title');
+		var progressBar = $('.progress-bar');
+		var button = $('.modal-footer input');
+
+		inputs.removeAttr("disabled");
+
+		title.text("Log in");
+
+		progressBar.css({ "width" : "0%" });
+
+		button.removeClass("btn-success")
+				.addClass("btn-primary")
+				.text("Log in")
+				.removeAttr("data-dismiss");
+                
+	});
+});
+    
+</script>
+<link href="https://fonts.googleapis.com/css?family=Asap|Yanone+Kaffeesatz" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container">
+      <h1><img class="logo" src="https://thumb7.shutterstock.com/display_pic_with_logo/3187259/538601911/stock-vector-vector-illustration-of-typography-text-sign-you-and-me-with-hipster-heart-pierced-by-an-arrow-538601911.jpg"></h1>
+      <nav>
+        <ul>
+          <li style="font-size: 30px;"><a href="#ven"><b>Vendors</b><span class="fa fa-angle-down"></span></a></li>
+          <li style="font-size: 30px;" ><a href="/vendor_insert"><b>Vendor Profile fill</b></a></li>
+          <li style="font-size: 30px;"><a href="/userlogin" ><b>User Login</b></a></li>
+          <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">data-toggle="modal" data-target="#myModal"
+			<form role="form" action="/vendor_login" method="post">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				<h4 class="modal-title" id="myModalLabel">Log in(Vendors)</h4>
+			</div>  /.modal-header 
+			<div class="modal-body">
+
+				<>
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" id="vLogin" name="vLogin" placeholder="enter registered email-id">
+							<label for="vLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+						</div>
+					</div>  /.form-group 
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" class="form-control" id="vPassword" name="vPassword" placeholder="Password">
+							<label for="vPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>  /.input-group 
+					</div> /.form-group 
+
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Remember me
+						</label>
+					</div>  /.checkbox 
+				
+
+			</div>  /.modal-body 
+
+			<div class="modal-footer">
+				<input type="submit" class="form-control btn btn-primary" value="Log in">
+
+				<div class="progress">
+					<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+						<span class="sr-only">progress</span>
+					</div>
+				</div>
+			</div> /.modal-footer 
+			</form>
+		</div> /.modal-content 
+	</div></.modal-dialog
+</div>< /.modal -->
+          <li style="font-size: 30px;"><b><a href="/data">User Sign up</a></b></li>
+          <li style="font-size: 30px;"><b><a href="/insert">Vendor Sign up</a></b></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+ <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://ae01.alicdn.com/kf/HTB1R3j1IFXXXXXqapXXq6xXFXXXL/3D-large-scale-mural-wallpaper-background-wallpaper-bedroom-bedside-television-rose-petal-wedding-room-theme-hotel.jpg">
+  <div class="text"  style="font-size: 70px; color: black;">Where The Dreams Are Turned Into Reality</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://3.bp.blogspot.com/-hWfpF7TltVI/V3uP2z6bP8I/AAAAAAAD0ZY/crCPhWODIC88IkJm5arfeO6zirRFxkWQQCHM/w690/05divyanka-party5">
+  <div class="text"  style="font-size: 70px; color: black;">Where Two Hearts Turn Into One</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="https://www.indianholiday.com/pictures/wedding/subcategories/gallery/north-indian-wedding-traditions-4013.jpg">
+  <div class="text"  style="font-size: 70px; color: white;">Where Two Families Become One</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="http://alexpasquali.com/wp-content/uploads/2012/10/HD-1.jpg">
+  <div class="text" style="font-size: 70px; color: white;">Where Happiness Lies In Client Satisfaction</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="http://www.letuspublish.com/wp-content/uploads/2015/11/xIndian-Wedding-Couple-Photo-Poses.jpg.pagespeed.ic.gg4Hd_iWDL.jpg">
+  <div class="text" style="font-size: 70px; color: white;">Where Souls Unite</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<div class="head"><h2></h2></div>
+<div class="vcontainer" id="ven">
+	<a href="/select_vendor?catg=Photography"><div class="box">
+	<div class="flipper">
+		<div class="front fphoto"></div>
+		<div class="back bphoto">
+			<p>PHOTOGRAPHY</p>
+		</div>
+		</div>
+	</div></a>
+
+	<a href="/select_vendor?catg=Decorators"><div class="box">
+	<div class="flipper">
+		<div class="front fdecorators"></div>
+		<div class="back bdecorators">
+			<p>DECORATORS</p>
+		</div>
+	</div>
+	</div></a>
+
+	<a href="/select_vendor?catg=Venue"><div class="box">
+	<div class="flipper">
+		<div class="front fvenue"></div>
+		<div class="back bvenue">
+			<p>VENUE</p>
+		</div>
+	</div>
+	</div></a>
+
+	<a href="/select_vendor?catg=Outfit"><div class="box">
+	<div class="flipper">
+		<div class="front foutfit"></div>
+		<div class="back boutfit">
+			<p>OUTFIT</p>
+		</div>
+	</div>
+	</div></a>
+
+	<div class="box">
+	<div class="flipper">
+		<div class="front fmakeover"></div>
+		<div class="back bmakeover">
+			<p>MAKEOVER</p>
+		</div>
+	</div>
+	</div>
+	<div class="box">
+	<div class="flipper">
+		<div class="front fcards"></div>
+		<div class="back bcards">
+			<p>INVITATION CARDS</p>
+		</div>
+	</div>
+	</div>
+	<div class="box">
+	<div class="flipper">
+		<div class="front fjewellery"></div>
+		<div class="back bjewellery">
+			<p>JEWELLERY</p>
+		</div>
+	</div>
+	</div>
+	<div class="box">
+	<div class="flipper">
+		<div class="front fsangeet"></div>
+		<div class="back bsangeet">
+			<p>SANGEET</p>
+
+		</div>
+	</div>
+	</div>
+</div>
+<div class="userprofile">
+<div id="pro">
+	<p>To explore more</p>
+	<a href="/useraddl"><p>Fill out user profile>></p></a>
+	<a href="/viewaddl"><p>View your profile and schedule>></p></a>
+</div>
+</div>
+<div class="head"><h2></h2></div>
+<div class="demo">
+  <h1 style="font-family: 'Yanone Kaffeesatz', sans-serif;">WEDDING PLANNERS</h1>
+
+  <h5>Contact: 9876543210</h5>
+  <h5>Email: contact@wedding.com</h5>
+  <div style="width: 100%"><iframe width="100%" height="300pt" src="http://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=600&hl=ru&q=Sardar%20Patel%20Institute%20of%20Technology%2C%20Mumbai+(You%26Me)&ie=UTF8&t=&z=14&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.mapsdirections.info/en/custom-google-maps/">Create a custom Google Map</a> by <a href="http://www.mapsdirections.info/en/">UK Maps</a></iframe></div><br />
+
+  
+</div>
+
+<div class="footer" >MADE WITH <i class="fa fa-heart"></i> BY Simran Disha Rajvi Anushka </div>
+
+</body>
+</html>

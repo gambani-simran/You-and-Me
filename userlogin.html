@@ -1,0 +1,94 @@
+<style>
+label { display: inline-block; width: 210px; text-align: right; }
+body{
+  background-image: url("http://cdn.wallpapersafari.com/63/65/KeF2Rg.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#user{
+  position: relative;
+  height: 250px;
+  width: 600px;
+  border: 0px solid black;
+  margin: auto;
+}
+#textt{
+  position: absolute;
+  height: 100px;
+  width: 250px;
+  border: 0px solid black;
+  top: 120px;
+  left: 260px;
+}
+#con{
+
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>  
+
+function chkpwd()
+{
+  var p = document.getElementById('p').value;
+  if(p.length < 6)
+    alert("Password should contain more than 6 characters");
+  else if(p.search(/\d/) == -1)
+    alert("Password should contain at least one digit");
+  else if(p.search(/[a-zA-Z]/) == -1)
+    alert("Password should contain alphabets");
+  else if(p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) == -1)
+    alert("Password should contain at least one special character");
+  else
+    document.getElementById('chk').innerHTML='<span style="font-family: Arial Unicode MS, Lucida Grande">&#10004;</span>';
+
+} 
+/*<a href="http://www.animateit.net"> <img src="http://www.animateit.net/data/media/192/acc004.gif" border="0" alt="Green Check Mark from AnimateIt.net" /> </a>*/
+function chkmatch()
+{
+   var p1 = document.getElementById('p').value;
+   var p2 = document.getElementById('p1').value;
+   if(p1 === p2)
+    document.getElementById('c').innerHTML='<span style="font-family: Arial Unicode MS, Lucida Grande">&#10004;</span>';
+   else
+    alert("password should match");
+}
+
+
+
+</script>  
+</head>
+<body>
+
+<div class="container">
+
+      <div id="user">
+      <div id="textt">
+      <h1>USER LOGIN</h1>
+      <p><h3>Log in to your account<h3></p>
+      </div>
+      </div>
+      <div id="con" align="center" style="line-height: 1.8;">
+      <form action="/userlogin" method="POST" name="">
+      <fieldset>
+    <label>Email-Id: </label><input type="email" name="EmailId" placeholder="enter registered email-id">
+    <br><br>
+    <label>Password: </label><input type="password" name="Password" id="p" onchange="chkpwd()"><span id ="chk"></span> 
+    <br><br>
+    
+    <input type="submit" value="Submit">
+    
+    </fieldset>
+  </form>
+  </div>    
+</div>
+
+</body>
+</html>

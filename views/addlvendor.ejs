@@ -1,0 +1,298 @@
+<style type="text/css">
+	.error-notice {
+  margin: 5px 5px; /* Making sure to keep some distance from all side */
+}
+
+.oaerror {
+  width: 90%; /* Configure it fit in your design  */
+  margin: 0 auto; /* Centering Stuff */
+  background-color: #FFFFFF; /* Default background */
+  padding: 20px;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.danger {
+  border-left-color: #d9534f; /* Left side border color */
+  background-color: rgba(217, 83, 79, 0.1); /* Same color as the left border with reduced alpha to 0.1 */
+}
+
+.danger strong {
+  color:  #d9534f;
+}
+
+.warning {
+  border-left-color: #f0ad4e;
+  background-color: rgba(240, 173, 78, 0.1);
+}
+
+.warning strong {
+  color: #f0ad4e;
+}
+
+.info {
+  border-left-color: #5bc0de;
+  background-color: rgba(91, 192, 222, 0.1);
+}
+
+.info strong {
+  color: #5bc0de;
+}
+
+.success {
+  border-left-color: #2b542c;
+  background-color: rgba(43, 84, 44, 0.1);
+}
+
+.success strong {
+  color: #2b542c;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<form action="/vendor_insert" method="post" class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Fill up your vendor profile!!</legend>
+
+<!-- Button 1-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-info">General Information</button>
+  </div>
+</div>
+
+<!-- Text input 1-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VName">Vendor Name</label>  
+  <div class="col-md-4">
+  <input id="VName" name="VName" type="text" class="form-control input-md" value="<%=data[(data.length-1)].Vendor_name%>" readonly>
+    
+  </div>
+</div>
+
+<!-- Text input 2-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VType">Vendor type</label>  
+  <div class="col-md-4">
+  <input id="VType" name="VType" type="text" class="form-control input-md" value="<%=data[(data.length-1)].Vendor_type%>" readonly>
+  </div>
+  </div>
+</div>
+
+<!-- Text input 3-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VBrand">Brand name</label>  
+  <div class="col-md-4">
+  <input id="VBrand" name="VBrand" type="text" class="form-control input-md" value="<%=data[(data.length-1)].Brand%>" readonly>
+    
+  </div>
+</div>
+
+<!-- Text input 4-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VCity">Base city</label>  
+  <div class="col-md-4">
+  <input id="VCity" name="VCity" type="text" class="form-control input-md" value="<%=data[(data.length-1)].City%>" readonly>
+  </div>
+</div>
+
+<!-- Text input 5-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VEmail">Vendor email-Id</label>  
+  <div class="col-md-4">
+  <input id="VEmail" name="VEmail" type="email" class="form-control input-md" value="<%=data[(data.length-1)].Email%>" readonly>
+  </div>
+</div>
+
+<!-- Button 2-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-info">Additional Information</button>
+  </div>
+</div>
+
+<!-- Text input 1-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VContact">Contact number</label>  
+  <div class="col-md-4">
+  <input id="VContact" name="VContact" type="text" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input 2-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VDescription">Vendor description</label>  
+  <div class="col-md-4">
+  <input id="VDescription" name="VDescription" type="text" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input 4-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VAddress">Complete Address</label> 
+  <div class="col-md-4"> 
+  <input id="VAddress" name="VAddress" type="text" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input 5-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="VPricing">Pricing</label>  
+  <div class="col-md-4">
+  <input id="VPricing" name="VPricing" type="text" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-primary">Vendor Terms</button>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Payment Terms</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="VPaymentTerms">
+      <input type="radio" name="VPaymentTerms" id="VPaymentTerms" value="Upto 25% Advance" checked="checked">
+      Upto 25% Advance
+    </label>
+    </div>
+  <div class="radio">
+    <label for="VPaymentTerms">
+      <input type="radio" name="VPaymentTerms" id="VPaymentTerms" value="Approx 50% Advance while booking">
+      Approx 50% Advance while booking
+    </label>
+	</div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Travel Cost</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="VTravelCost">
+      <input type="radio" name="VTravelCost" id="VTravelCost" value="Cost of Stay borne by Client, Travel borne by Us" checked="checked">
+      Cost of Stay borne by Client, Travel borne by Us
+    </label>
+    </div>
+  <div class="radio">
+    <label for="VTravelCost">
+      <input type="radio" name="VTravelCost" id="VTravelCost" value="Cost of Stay & Travel borne by Client">
+      Cost of Stay & Travel borne by Client
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-primary">Relevant Links</button>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Social Media</label>  
+  <div class="col-md-4">
+  <input id="" name="VLink_b" type="text" placeholder="Website" class="form-control input-md">
+  <input id="" name="VLink_a" type="text" placeholder="Facebook" class="form-control input-md">
+  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Profile Photographs</label>  
+  <div class="col-md-4">
+  <input id="" name="VPic_a" type="text" placeholder="1" class="form-control input-md">
+  <input id="" name="VPic_b" type="text" placeholder="2" class="form-control input-md">
+  <input id="" name="VPic_c" type="text" placeholder="3" class="form-control input-md">
+  
+  </div>
+</div>
+
+<!-- Submit -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <input id="" name="" type="submit" value="Submit" class="form-control btn btn-info">
+  </div>
+</div>
+
+<!-- Button Drop Down 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="buttondropdown"></label>
+  <div class="col-md-6">
+    <div class="input-group">
+      <input id="buttondropdown" name="buttondropdown" class="form-control input-medium" placeholder="Taxonomy" type="text">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          USGM Taxonomy
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">USGM Taxonomy</a></li>
+          <li><a href="#">ASDA Taxonomy</a></li>
+          <li><a href="#">Other</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+</fieldset>
+</form>
+
+<!--
+<div class="container">
+    <div class="row">
+     <br><br>
+		<div class="error-notice">
+          <div class="oaerror danger">
+            <strong>Error</strong> - You provided a wrong username/password
+          </div>
+          <div class="oaerror warning">
+            <strong>Error</strong> - You left a field Blank
+          </div>
+          <div class="oaerror info">
+            <strong>Error</strong> - Please Select a Different Username
+          </div>
+          <div class="oaerror success">
+            <strong>Yeppi</strong> - You are successfully registered. Please login.
+          </div>
+        </div>
+	</div>
+</div>
+<center>Cursed By <a href="http://ioritro.com/486/a-different-approach-to-bootstrap-alert/">Oritro Ahmed </a></center>
+-->
+</body>
+</html>

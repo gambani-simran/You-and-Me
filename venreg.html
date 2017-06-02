@@ -1,0 +1,105 @@
+<style type="text/css">
+label { display: inline-block; width: 210px; text-align: right; }
+	#contain{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 0px solid black;
+    background-image: url(http://www.semarang.crowneplaza.com/images/600x400/weddings.dataphoto.30.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+     background-size: 100% 100%;
+  }
+  #one{
+    position:absolute; 
+    width: 600px;
+    height: 600px;
+    margin-left: 30%;
+    margin-right: 40%;
+    border: 0px solid black;
+  }
+	
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vendor Registration</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>  
+
+function chkpwd()
+{
+	var p = document.getElementById('pass1').value;
+	if(p.length < 6)
+		alert("Password should contain more than 6 characters");
+	else if(p.search(/\d/) == -1)
+		alert("Password should contain at least one digit");
+	else if(p.search(/[a-zA-Z]/) == -1)
+		alert("Password should contain alphabets");
+	else if(p.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) == -1)
+		alert("Password should contain at least one special character");
+	else
+		document.getElementById('chk').innerHTML='<span style="font-family: Arial Unicode MS, Lucida Grande">&#10004;</span>';
+
+} 
+/*<a href="http://www.animateit.net"> <img src="http://www.animateit.net/data/media/192/acc004.gif" border="0" alt="Green Check Mark from AnimateIt.net" /> </a>*/
+function chkmatch()
+{
+	 var p1 = document.getElementById('pass1').value;
+	 var p2 = document.getElementById('passcon').value;
+	 if(p1 === p2)
+	 	document.getElementById('c').innerHTML='<span style="font-family: Arial Unicode MS, Lucida Grande">&#10004;</span>';
+	 else
+	 	alert("password should match");
+}
+
+    
+
+</script>
+</head>
+<body>
+<div id="contain">
+	<div id="one">
+		<form id="form1" method="post" action="/insert" style="padding-top: 150px; padding-left: 10px;">
+			<fieldset>
+				
+				<label>Your Name:</label><input type="text" name="Vendor_name"><br><br>
+				<label>Brand Name:</label><input type="text" name="Brand"><br><br>
+				<label>Vendor Type:</label> 
+				<select name="Vendor_type">
+				<option value="Venue">Venue</option>
+				<option value="Photography">Photography</option>
+				<option value="Outfit">Outfit</option>
+				<option value="Makeover">Makeover</option>
+				<option value="Decorators">Decorators</option>
+				<option value="Invitation cards">Invitation cards</option>
+				<option value="Jewellery">Jewellery</option>
+				<option value="Sangeet">Sangeet</option>
+				</select><br><br>
+				<label>Base city:</label> 
+				<select name="City">
+				<option value="">City</option>
+				<option value="Mumbai">Mumbai</option>
+				<option value="Delhi">Delhi</option>
+				<option value="Chennai">Chennai</option>
+				</select><br><br>
+				<label>Email:</label><input type="email" name="Email"><br><br>
+				<label>Password:</label><input type= "password" id="pass1" name="VPassword" onchange="chkpwd()"><span id="chk"></span><br><br>
+				<label>Confirm Password:</label><input type="password" id="passcon" name="VPass" onchange="chkmatch()"><span id="c"></span><br><br>
+				
+			
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" form="form1" value="Submit">Register</button>
+			
+			</fieldset>
+		</form>
+		
+		
+	</div>
+</div>
+</body>
+</html>

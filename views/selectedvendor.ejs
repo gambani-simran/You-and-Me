@@ -1,0 +1,433 @@
+<style type="text/css">
+	*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+body {
+	background-color:;
+  font-family:'Source Sans Pro', sans-serif;
+  min-height: 1000px;
+
+}
+#container{
+	position: relative;
+	width: 98%;
+	height: 88px;
+  margin-left: 9px;
+  background: #FFF176;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#sign {
+padding:15px;
+margin-right: 20px;
+line-height:40px;
+float:right;
+}
+
+#sign li {
+list-style:none;
+display:inline;
+}
+
+#sign a {
+text-decoration:none;
+color:black;
+padding:10px;
+margin:6px;
+font-size:18px;
+font-family: 'Source Sans Pro', sans-serif;
+}
+#sidebar{
+	position: absolute;
+	width: 250px;
+	border: 1px solid #FFF176;
+	left: 8px;
+	top: 87px;
+	min-height: 100%;
+	height: 1900px;
+  background: #FFF176;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+#searchbar{
+	position: absolute;
+	width: 79.5%;
+	border: 1px solid #FFF176;
+	left: 258px;
+	top: 87px;
+	height: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#wrap{
+  background: #FFFFFF;
+	position: absolute;
+	width: 80%;
+	max-width: 1000px;
+	margin: 20px auto;
+	top: 150px;
+	right: 10px;
+	left: 280px;
+
+}
+
+#sidebar_title {
+background:white;
+color:black;
+font-size:22px;
+font-family:arial; 
+padding:10px;
+text-align:center;
+}
+
+#cats {
+  text-align:center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#cats li {list-style:none; margin:5px;}
+
+#cats a {color:white; padding:8px; margin:5px; text-align:center; font-size:20px; text-decoration:none; font-family:Comic Sans Ms;}
+
+#cats a:hover {color:orange; font-weight:bolder; text-decoration:underline;}
+.columns_2 figure{
+   width:49%;
+   margin-right:1%;
+}
+.columns_2 figure:nth-child(2){
+	margin-right: 0;
+}
+.columns_3 figure{
+   width:32%;
+   margin-right:1%;
+}
+.columns_3 figure:nth-child(3){
+	margin-right: 0;
+}
+.columns_4 figure{
+   width:24%;
+   margin-right:1%;
+}
+.columns_4 figure:nth-child(4){
+	margin-right: 0;
+}
+.columns_5 figure{
+   width:19%;
+   margin-right:1%;
+}
+.columns_5 figure:nth-child(5){
+	margin-right: 0;
+}
+#columns figure:hover{
+	-webkit-transform: scale(1.1);
+	-moz-transform:scale(1.1);
+	transform: scale(1.1);
+
+}
+#columns:hover figure:not(:hover) {
+	opacity: 0.4;
+}
+div#columns figure {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 0 0px 15px;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+	opacity: 1;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+div#columns figure img {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+div#columns figure figcaption {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.5;
+  height:60px;
+  font-weight:600;
+  text-overflow:ellipsis;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a.button{
+  font-family: 'Source Sans Pro', sans-serif;
+  padding:10px;
+  background:salmon;
+  margin:10px;
+  display:block;
+  text-align:center;
+  color:#fff;
+  transition:all 1s linear;
+  text-decoration:none;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+  border-radius:3px;
+  border-bottom:3px solid #ff6536;
+  box-shadow:1px 1px 3px rgba(0,0,0,0.3);
+}
+a.button:hover{
+  background:#ff6536;
+  border-bottom:3px solid salmon;
+  color:#f1f2f3;
+}
+@media screen and (max-width: 960px) { 
+  #columns figure { width: 24%; }
+}
+@media screen and (max-width: 767px) {
+  #columns figure { width:32%;}
+}
+@media screen and (max-width: 600px) {
+  #columns figure { width: 49%;}
+}
+@media screen and (max-width: 500px) {
+  #columns figure { width: 100%;}
+}
+#custom-search-input {
+        margin:0;
+        margin-top: 7px;
+        padding: 0;
+        margin-left: 5px;
+    }
+ 
+    #custom-search-input .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+ 		width:1060px;
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+ 
+    #custom-search-input button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color:#D9230F;
+    }
+ 
+    .search-query:focus + button {
+        z-index: 3;   
+    }
+*{
+    padding: 0;
+    margin: 0;
+  }
+  .main-nav{
+    width: 248px;
+    background: #FDD835;
+  }
+  .main-nav li{
+    list-style: none;
+  }
+  .main-nav a{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    display: block;
+    padding: 10px 0px 10px 20px;
+    text-decoration: none;
+    border-bottom: 1px dotted gray;
+
+  }
+  .main-nav a:hover{
+    background: #F9A825;
+  }
+  .main-nav-ul ul{
+    display: none;
+
+  }
+  .main-nav-ul li.tap ul{
+    display: block;
+
+  }
+  .main-nav-ul ul a:before{
+    content: '\203A';
+    margin-right: 12px;
+
+  }
+  .main-nav .sub-arrow:after{
+    content:'\203A';
+    float: right;
+    margin-right: 20px;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+  }
+  .main-nav li.tap .sub-arrow:after{
+    content: '\2039';
+  }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="C:\Users\Owner\Downloads\jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(e){
+      $('.has-sub').click(function(){
+        $(this).toggleClass('tap');
+      });
+    });
+  </script>
+</head>
+<body>
+
+<!--Changing the number in the column_# class changes the number of columns-->
+	<div id="container" style="border: 1px solid #FFF176;"><a href="http://s61.photobucket.com/user/gambanisimran08/media/logo_zps6ha3xiny.jpg.html" target="_blank"><img src="https://thumb7.shutterstock.com/display_pic_with_logo/3187259/538601911/stock-vector-vector-illustration-of-typography-text-sign-you-and-me-with-hipster-heart-pierced-by-an-arrow-538601911.jpg" style="float: left; height: 80px; width: 250px;" border="0" alt=" photo logo_zps6ha3xiny.jpg"/></a>
+	<ul id="sign">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Profile</a></li>
+	</ul>
+	</div>
+	<div id="sidebar">
+      
+        <!--<div id="sidebar_title">Categories</div>
+        
+        <nav class="main-nav">
+<ul class="main-nav-ul">
+  <li><a href="#home">Home</a></li>
+  <li class="has-sub"><a href="#home">Products<span class="sub-arrow"></span></a>
+  <ul>
+    <li><a href="#">xyz</a></li>
+    <li><a href="#">abc</a></li>
+    <li><a href="#">qwe</a></li>
+    <li><a href="#">asd</a></li>
+  </ul>
+  </li>
+  <li><a href="#home">Filter</a></li>
+  <li><a href="#home">My Account</a></li>
+  <li><a href="checkout.html">Cart</a></li>
+</ul>
+</nav>-->
+  </div>
+	<div id="searchbar">
+		<div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="search-query form-control" placeholder="Search " />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+	</div>
+	<div id="wrap">
+	<div id="columns" class="columns_3">
+  <% if(data.length){ 
+                
+  for(var i = 0;i < data.length;i++) { %>                 
+
+  <figure><a href="prod.html">
+  <a href="" target="_blank"><img src="<%=data[i].VPic%>" border="0" alt="photo 1_zpsnmkfxypk.jpg"/></a></a>
+  <figcaption><a href="/onevendor_selected?name=<%=data[i].Vendor_name%>"><%=data[i].Vendor_name%></a></figcaption>
+  <span class="price"><%=data[i].Vendor_type%></span>
+  <a class="button" href="#">View</a>
+  </figure>
+
+
+  <% }
+
+  } %>
+  <!--<figure><a href="prod.html">
+  <a href="http://s61.photobucket.com/user/gambanisimran08/media/1_zpsnmkfxypk.jpg.html" target="_blank"><img src="http://i61.photobucket.com/albums/h59/gambanisimran08/1_zpsnmkfxypk.jpg" border="0" alt=" photo 1_zpsnmkfxypk.jpg"/></a></a>
+	<figcaption><a href="prod.html">Product 1</a></figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>
+	
+	<figure>
+	<img src="https://n4.sdlcdn.com/imgs/b/0/1/230X258_sharpened/Panasonic-P75-8GB-SDL249796997-1-0b2c7.jpg">
+	<figcaption>Product 2</figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>
+	
+  <figure>
+	<img src="http://n3.sdlcdn.com/imgs/b/e/k/LG-LG-H442-4G-LTU-SDL310635139-1-d5123.jpg">
+	<figcaption><a href="prod.html">Product 3</a></figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>
+  
+	<figure>
+	<img src="https://n2.sdlcdn.com/imgs/e/a/x/LeEco-Le2-X526-32GB-Rose-SDL111471106-1-2ce3e.jpg">
+	<figcaption>Product 4</figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>
+	
+   <figure>
+	 <img src="C:\Users\Owner\Desktop\1.jpg">
+	<figcaption>Product 5</figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>
+	
+   <figure>
+	 <img src="http://media2.intoday.in/indiatoday/images/stories/apple-iphone-42--story_650_011514033250.jpg">
+	<figcaption>Product 6</figcaption>
+     <span class="price">Rs. 1000</span>
+     <a class="button" href="#">Buy Now</a>
+	</figure>
+  
+	<figure>
+	<img src="https://n4.sdlcdn.com/imgs/b/0/1/230X258_sharpened/Panasonic-P75-8GB-SDL249796997-1-0b2c7.jpg">
+	<figcaption>Product 7</figcaption>
+    <span class="price">Rs. 1000</span>
+    <a class="button" href="#">Buy Now</a>
+	</figure>	
+  
+   <figure>
+	<img src="http://n3.sdlcdn.com/imgs/b/e/k/LG-LG-H442-4G-LTU-SDL310635139-1-d5123.jpg">
+	<figcaption>Product 8</figcaption>
+     <span class="price">Rs. 1000</span>
+     <a class="button" href="#">Buy Now</a>
+	</figure>
+  
+    <figure>
+	<img src="http://media2.intoday.in/indiatoday/images/stories/apple-iphone-42--story_650_011514033250.jpg">
+    <figcaption>Product 9</figcaption>
+      <span class="price">Rs. 1000</span>
+      <a class="button" href="#">Buy Now</a>
+	</figure>
+  -->	
+	</div>
+</div>
+
+</body>
+</html>
