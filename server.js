@@ -43,7 +43,7 @@ app.get('/', function(req, res) {
       global.lastid=0;
 //user sign-up
 app.get('/data', function(req, res) {
-    res.sendFile(path.join(__dirname, 'register.html'));
+    res.sendFile(path.join(__dirname, 'views/register.html'));
 });
 //vendor sign-up
 app.get('/insert', function(req, res) {
@@ -60,7 +60,7 @@ app.get('/useraddl', function(req, res) {
 });*/
 //user sign-up and data insertion
 app.post('/data', function(req, res) {
-  res.sendFile(path.join(__dirname, 'register.html'));
+  res.sendFile(path.join(__dirname, 'views/register.html'));
     console.log(req.body.Name);
     
     // Add these values to your MySQL database here
