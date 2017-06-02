@@ -2,10 +2,16 @@ var app = require('express')();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var path = require('path');
-
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var expressValidator = require('express-validator');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(expressValidator());
+app.use(cookieParser());
+app.use(session({secret: 'itsasecret',
+				saveUninitialized: true,
+				resave: true}));
 
 //app.engine('html', require('ejs').renderFile);
 //app.set('view engine', 'html');
@@ -20,27 +26,24 @@ var connection = mysql.createPool({
 });
 
 //test for connection-landing page
-app.get('/', function(req, res) {
+app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'));
     connection.getConnection(function(error, tempCont){
 		if(!!error){
-			
 			console.log("Error");
 		}else{
 			console.log("Connected");
 			tempCont.query("SELECT * FROM vendorlist", function(error, rows, fields){
-				tempCont.release();
+				//tempCont.release();
 				if(!!error){
 					console.log("Error in query");
 				}else{
 					console.log("Successful query");
 					console.log(rows[0].ven_name);
-          console.log(rows[0].ven_img);
-          
-          }
-					
-		});
-      global.lastid=0;
+          			console.log(rows[0].ven_img);
+          		}
+				});
+global.lastid=0;
 //user sign-up
 app.get('/data', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/register.html'));
@@ -55,9 +58,7 @@ app.get('/userlogin', function(req, res) {
 app.get('/useraddl', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/venreg.html'));
 });
-/*app.get('/vendor_insert', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views/addlvendor.ejs'));
-});*/
+
 //user sign-up and data insertion
 app.post('/data', function(req, res) {
   res.sendFile(path.join(__dirname, 'views/register.html'));
@@ -70,8 +71,7 @@ app.post('/data', function(req, res) {
            if(error)
                {
                    throw error;
-
-               }
+				}
            else 
                {
                  console.log('Inserted Successfully!');
@@ -79,7 +79,7 @@ app.post('/data', function(req, res) {
            
        }); 
 });
-app.post('/addldata', function(req, res) {
+app.post('/addldata', function(req, res){
   res.sendFile(path.join(__dirname, 'views/addluserinfo.html'));
     console.log(req.body.Name);
     
@@ -157,6 +157,7 @@ app.post('/userlogin', function(req, res) {
         console.log(rows[0]);
         if (rows[0].EmailId == req.body.EmailId && rows[0].Password == req.body.Password) {
           console.log("Successfully logged in");
+          res.redirect('/');
         }
         });
        /*connection.query(queryvend,function(error,results){
@@ -319,12 +320,7 @@ app.post('/likes',function(req,res){
        });
 });
 
-	}
-	
-	});
-
+}
 });
-
-
-
+});
 app.listen(3000);
