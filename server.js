@@ -56,7 +56,7 @@ app.get('/userlogin', function(req, res) {
     res.sendFile(path.join(__dirname, 'userlogin.html'));
 });
 app.get('/useraddl', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views/venreg.html'));
+    res.sendFile(path.join(__dirname, 'views/addluserinfo.html'));
 });
 
 //user sign-up and data insertion
@@ -75,6 +75,7 @@ app.post('/data', function(req, res) {
            else 
                {
                  console.log('Inserted Successfully!');
+                
                }
            
        }); 
@@ -95,13 +96,14 @@ app.post('/addldata', function(req, res){
            else 
                {
                  console.log('Inserted Successfully!');
+                 
                }
            
        }); 
-       res.writeHead(302, {
+      /* res.writeHead(302, {
       'Location': 'http://localhost:3000/'
       });
-      res.end();
+      res.end();*/
 });
 
 //vendor sign-up and data insert
@@ -136,14 +138,14 @@ app.post('/insert', function(req, res) {
                {
                 console.log(results.insertId);
                 lastid=results.insertId;
-                 res.send('Inserted Successfully!')
+                 res.send('Inserted Successfully!');
                }
            
        }); 
-   res.writeHead(302, {
+   		/*res.writeHead(302, {
       'Location': 'http://localhost:3000/'
       });
-      res.end();    
+      res.end();*/    
 });
 app.post('/userlogin', function(req, res) {
   res.sendFile(path.join(__dirname, 'userlogin.html'));
@@ -173,10 +175,10 @@ app.post('/userlogin', function(req, res) {
                }
            
        }); */
-      res.writeHead(302, {
+      /*res.writeHead(302, {
       'Location': 'http://localhost:3000/'
       });
-      res.end();
+      res.end();*/
        
 });
 //selecting one vendor category and landing on its list page
